@@ -1,6 +1,6 @@
 # LMS CLI DevOps Project
 
-A robust, production-ready Library Management System (LMS) with a CLI interface, built with **Java 25** and **Maven**. This project demonstrates advanced Git workflows and CI/CD integration.
+A robust, production-ready Library Management System (LMS) with a CLI interface, built with **Java 25** and **Maven**. This project demonstrates advanced Git workflows and CI/CD integration....
 
 ## Features
 - **CLI-Based**: Menu-driven interface with ANSI color support.
