@@ -26,7 +26,8 @@ public class MainCLI {
                 case "3" -> borrowBook();
                 case "4" -> returnBook();
                 case "5" -> viewUserBorrowals();
-                case "6" -> {
+                case "6" -> registerUser();
+                case "7" -> {
                     TerminalUtils.printColored(TerminalUtils.YELLOW, "Exiting LMS. Goodbye!");
                     System.exit(0);
                 }
@@ -42,7 +43,8 @@ public class MainCLI {
         System.out.println("3. Borrow Book");
         System.out.println("4. Return Book");
         System.out.println("5. View User Borrowals");
-        System.out.println("6. Exit");
+        System.out.println("6. Register User");
+        System.out.println("7. Exit");
         System.out.print(TerminalUtils.CYAN + "Enter option: " + TerminalUtils.RESET);
     }
 
@@ -105,6 +107,21 @@ public class MainCLI {
         try {
             libraryService.returnBook(userId, isbn);
             TerminalUtils.printSuccess("Book returned successfully.");
+        } catch (Exception e) {
+            TerminalUtils.printError(e.getMessage());
+        }
+    }
+
+    private static void registerUser() {
+        TerminalUtils.printHeader("Register New User");
+        System.out.print("User ID: ");
+        String userId = scanner.nextLine();
+        System.out.print("User Name: ");
+        String name = scanner.nextLine();
+
+        try {
+            libraryService.registerUser(userId, name);
+            TerminalUtils.printSuccess("User registered successfully.");
         } catch (Exception e) {
             TerminalUtils.printError(e.getMessage());
         }
